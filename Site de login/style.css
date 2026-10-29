@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata&family=Figtree:ital,wght@0,300..900;1,300..900&family=Kaushan+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Playwrite+CA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Storm&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    /* Organiza o formulário e o rodapé em linhas; a primeira ocupa o espaço livre. */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    /* 100vh é o fallback; 100dvh acompanha a altura visível em navegadores móveis. */
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Evita rolagem horizontal sem impedir a rolagem vertical em telas baixas. */
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #2a1b6b, #5c44a2);
+    position: relative;
+
+}
+
+.stars {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(1px 1px at 25% 15%, white, transparent),
+        radial-gradient(1px 1px at 50% 40%, white, transparent),
+        radial-gradient(2px 2px at 15% 55%, white, transparent),
+        radial-gradient(1px 1px at 70% 25%, white, transparent),
+        radial-gradient(1.5px 1.5px at 85% 60%, white, transparent),
+        radial-gradient(1px 1px at 35% 75%, white, transparent),
+        radial-gradient(1.5px 1.5px at 90% 10%, white, transparent),
+        radial-gradient(2px 2px at 5% 30%, white, transparent),
+        radial-gradient(1px 1px at 60% 85%, white, transparent),
+        radial-gradient(1.5px 1.5px at 40% 5%, white, transparent);
+    ;
+
+}
+
+.form,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+.form {
+    /* Mantém até 400px em telas grandes e deixa margem lateral em telas estreitas. */
+    width: min(400px, calc(100vw - 32px));
+    background-color: rgba(255,255,255, 0.15);
+    border: 1px solid rgba(255,255,255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 16px;
+    padding: 35px;
+
+}
+
+.form h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+
+}
+
+.box-form {
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.box-form input {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-radius:4px;
+    border: 1px solid #c5c4c45b;
+    padding: 6px;
+    outline: none;
+    color: #fff;
+    background-color: rgba(255,255,255, 0.15); 
+    font-size: 16px;
+
+}
+
+.box-form input::placeholder {
+    color: rgba(255, 255, 255, 0.757);
+
+}
+
+.box-form i {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.remember-for-got {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 16px;
+
+}
+
+.remember-for-got label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.remember-for-got a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.remember-for-got a:hover{
+    text-decoration: underline;
+
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: #2a1b6b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+   
+
+}
+
+button:hover{
+    background-color: #fff;
+    transform: translateY(-5px);
+
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+
+}
+
+
+.register-link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+} 
+
+.register-link a:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+ 
+}
+
+.footer a {
+    color: #6b03b5d6;
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #2a1b6b;
+    
+}
+
+/* Em celulares, reduz os espaçamentos para o conteúdo caber melhor na tela. */
+@media (max-width: 480px) {
+    .form {
+        padding: 24px;
+    }
+
+    .footer {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
